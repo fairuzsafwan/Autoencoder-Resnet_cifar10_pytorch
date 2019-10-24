@@ -30,12 +30,12 @@ Dataset:
 
 Results:
 1. main_datasetOriginal
-Training: 99.968%
-Testing: 86.56%
+- Training: 99.968%
+- Testing: 86.56%
 
 2. main_datasetB
-Training: 100.0%
-Testing: 68.5%
+- Training: 100.0%
+- Testing: 68.5%
 
 
 
