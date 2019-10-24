@@ -17,16 +17,16 @@ A combination of Autoencoder and ResNet34
 * Training images: 46,800
 * Testing images: 13,200
 + Category Distribution(Training):
- - airplane (90%)
- - automobile (90%)
- - bird (50%)
- - cat (90%)
- - deer (50%)
- - dog (90%)
- - frog (90%)
- - horse (90%)
- - ship (90%)
- - truck (50%)
+   - airplane (90%)
+   - automobile (90%)
+   - bird (50%)
+   - cat (90%)
+   - deer (50%)
+   - dog (90%)
+   - frog (90%)
+   - horse (90%)
+   - ship (90%)
+   - truck (50%)
 
 ## Results:
 ### 1. main_datasetOriginal
@@ -37,16 +37,16 @@ A combination of Autoencoder and ResNet34
 ### 2. main_datasetB
  - Training: 100.0%
  - Testing: 68.5%
-  - Accuracy of plane : 91 %
-  - Accuracy of   car : 90 %
-  - Accuracy of  bird : 60 %
-  - Accuracy of   cat : 80 %
-  - Accuracy of  deer : 53 %
-  - Accuracy of   dog : 68 %
-  - Accuracy of  frog : 88 %
-  - Accuracy of horse : 83 %
-  - Accuracy of  ship : 100 %
-  - Accuracy of truck : 60 %
+    - Accuracy of plane : 91 %
+    - Accuracy of   car : 90 %
+    - Accuracy of  bird : 60 %
+    - Accuracy of   cat : 80 %
+    - Accuracy of  deer : 53 %
+    - Accuracy of   dog : 68 %
+    - Accuracy of  frog : 88 %
+    - Accuracy of horse : 83 %
+    - Accuracy of  ship : 100 %
+    - Accuracy of truck : 60 %
 
 
 
