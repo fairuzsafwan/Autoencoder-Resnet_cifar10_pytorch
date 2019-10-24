@@ -1,6 +1,6 @@
 # Autoencoder-Resnet_cifar10_pytorch
 
-Framework:
+Markup :  # Framework #
 Pytorch
 
 Models:
@@ -33,9 +33,21 @@ Results:
 - Training: 99.968%
 - Testing: 86.56%
 
+
 2. main_datasetB
 - Training: 100.0%
 - Testing: 68.5%
+
+Accuracy of plane : 91 %
+Accuracy of   car : 90 %
+Accuracy of  bird : 60 %
+Accuracy of   cat : 80 %
+Accuracy of  deer : 53 %
+Accuracy of   dog : 68 %
+Accuracy of  frog : 88 %
+Accuracy of horse : 83 %
+Accuracy of  ship : 100 %
+Accuracy of truck : 60 %
 
 
 
