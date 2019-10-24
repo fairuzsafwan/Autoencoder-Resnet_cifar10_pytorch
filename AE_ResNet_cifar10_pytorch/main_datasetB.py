@@ -738,7 +738,7 @@ def main():
         print('Accuracy of %5s : %2d %%' % (
             classes[i], 100 * correct_category[i] / total_category[i]))
 
-    print("Elasped: " + datetime.now()-start)
+    print("Elasped: " + str(datetime.now()-start))
 
 
 if __name__ == '__main__':
