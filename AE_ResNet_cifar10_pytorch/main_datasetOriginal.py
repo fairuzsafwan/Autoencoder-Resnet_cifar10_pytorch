@@ -449,7 +449,6 @@ def main():
     #----------------------Print category wise----------------------
     correct_category = list(0. for i in range(10))
     total_category = list(0. for i in range(10))
-    iterations_Category =  int((math.floor(len(testLabel)/batchSize))) + 1
     with torch.no_grad():
         for data in testloader:
             images_category, labels_category = data
