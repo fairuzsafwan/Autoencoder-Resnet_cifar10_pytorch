@@ -33,7 +33,7 @@ Results:
 Training: 99.968%
 Testing: 86.56%
 
-2. main_datasetOriginal
+2. main_datasetB
 Training: 100.0%
 Testing: 68.5%
 
