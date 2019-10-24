@@ -1,6 +1,7 @@
 # Autoencoder-Resnet_cifar10_pytorch
 
-Markup :  # Framework #
+#
+Framework
 Pytorch
 
 Models:
