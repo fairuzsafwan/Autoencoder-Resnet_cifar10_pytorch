@@ -10,13 +10,13 @@ Dataset:
 1. Original dataset distribution (https://www.cs.toronto.edu/~kriz/cifar.html)
 * Training images: 50,000
 * Testing images: 10,000
---> Category Distribution(Training):
+Category Distribution(Training):
 - default (some categories may have more data than other categories)
 
 2. DatasetB
 * Training images: 46,800
 * Testing images: 13,200
---> Category Distribution(Training):
+Category Distribution(Training):
 - airplane (90%)
 - automobile (90%)
 - bird (50%)
