@@ -10,13 +10,13 @@ A combination of Autoencoder and ResNet34
 ### 1. Original dataset distribution (https://www.cs.toronto.edu/~kriz/cifar.html)
 * Training images: 50,000
 * Testing images: 10,000
-+ Category Distribution(Training):
- - default (some categories may have more data than other categories)
+* Category Distribution(Training):
+   - default (some categories may have more data than other categories)
 
 ### 2. DatasetB
 * Training images: 46,800
 * Testing images: 13,200
-+ Category Distribution(Training):
+* Category Distribution(Training):
    - airplane (90%)
    - automobile (90%)
    - bird (50%)
@@ -32,6 +32,16 @@ A combination of Autoencoder and ResNet34
 ### 1. main_datasetOriginal
  - Training: 99.968%
  - Testing: 86.56%
+    - Accuracy of plane : 81 %
+    - Accuracy of   car : 84 %
+    - Accuracy of  bird : 84 %
+    - Accuracy of   cat : 68 %
+    - Accuracy of  deer : 92 %
+    - Accuracy of   dog : 73 %
+    - Accuracy of  frog : 61 %
+    - Accuracy of horse : 91 %
+    - Accuracy of  ship : 100 %
+    - Accuracy of truck : 94 %
 
 
 ### 2. main_datasetB
