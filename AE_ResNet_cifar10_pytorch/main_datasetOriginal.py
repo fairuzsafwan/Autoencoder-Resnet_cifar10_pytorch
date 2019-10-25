@@ -452,6 +452,7 @@ def main():
     with torch.no_grad():
         for data in testloader:
             images_category, labels_category = data
+            images_category, labels_category = images_category.to(device), labels_category.to(device)
             test_encoded_category, test_outputs_category = autoencoder(images_category)
             test_outputs_resnet_category = resnet(test_encoded_category)
 
