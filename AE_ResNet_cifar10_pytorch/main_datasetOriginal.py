@@ -32,12 +32,13 @@ torch.manual_seed(SEED)
 if torch.cuda.is_available():
     torch.cuda.manual_seed(SEED)
 
+# Checks if GPU is available, otherwise it is trained via CPU
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 best_train_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 
-
+#Prints Encoder/decoder architecture
 def print_model(encoder, decoder):
     print("============== Encoder ==============")
     print(encoder)
@@ -45,7 +46,8 @@ def print_model(encoder, decoder):
     print(decoder)
     print("")
 
-
+#Initialize model and move training to GPU(if available) or CPU
+# Autoencoder Model
 def create_model_autoencoder():
     autoencoder = Autoencoder()
     print_model(autoencoder.encoder1, autoencoder.decoder1)
@@ -54,6 +56,8 @@ def create_model_autoencoder():
         print("Model moved to GPU in order to speed up training.")
     return autoencoder
 
+#Initialize model and move training to GPU(if available) or CPU
+# Resnet Model
 def create_model_resnet():
     resnet = ResNet34()
     #print(resnet)
@@ -62,6 +66,8 @@ def create_model_resnet():
         print("Model moved to GPU in order to speed up training.")
     return resnet
 
+#Initialize model and move training to GPU(if available) or CPU
+# Custom model
 def create_model_net():
     net = Net()
     print(net)
@@ -83,7 +89,7 @@ def imshow(img):
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
     plt.show()
 
-
+#---------------------------------------------- Autoencoder architecture ----------------------------------------------
 class Autoencoder(nn.Module):
     def __init__(self):
         super(Autoencoder, self).__init__()
@@ -157,10 +163,11 @@ class Autoencoder(nn.Module):
 
     def forward(self, x):
         encoded = self.encoder1(x)
-        #encoded = self.encoder(x)
         decoded = self.decoder1(encoded)
         return encoded, decoded
+#----------------------------------------------END Autoencoder architecture ----------------------------------------------
 
+#---------------------------------------------- ResNet architecture ----------------------------------------------
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -221,7 +228,9 @@ class ResNet(nn.Module):
 
 def ResNet34():
     return ResNet(BasicBlock, [3,4,6,3])
+#----------------------------------------------END ResNet architecture ----------------------------------------------
 
+#---------------------------------------------- Custom architecture ----------------------------------------------
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -240,6 +249,7 @@ class Net(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
+#----------------------------------------------END Custom architecture ----------------------------------------------
 
 def test(epoch, ):
     global best_acc
@@ -301,6 +311,7 @@ def main():
        resnet = torch.nn.DataParallel(resnet)
        autoencoder = torch.nn.DataParallel(autoencoder)
        cudnn.benchmark = True
+	   
     # Load data
     transform = transforms.Compose(
         [transforms.ToTensor(), ])
@@ -314,6 +325,7 @@ def main():
     testloader = torch.utils.data.DataLoader(testset, batch_size=batchSize,
                                              shuffle=False, num_workers=2)
 
+    #Load from checkpoint(if specified)
     if args.valid:
         print("Loading checkpoint...")
         autoencoder.load_state_dict(torch.load("./weights/autoencoder.pkl"))
@@ -377,7 +389,7 @@ def main():
 
             progress_bar(i, len(trainloader), 'Loss: %.3f | Acc: %.3f%% (%d/%d) | Best Accuracy: %.3f' % (train_loss/(i+1), 100.*correct/total, correct, total, best_acc))
 
-        global best_acc
+        #global best_acc
         #net.eval()
         test_loss = 0
         test_loss_autoencoder = 0
